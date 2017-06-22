@@ -1,0 +1,35 @@
+.input-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-title {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    outline: none;
+    border: 3px solid #c7b8d8;
+    font-size: 24px;
+}
+
+.input-title:focus {
+    border: 3px solid #9068be;
+}
+
+h2 {
+    color: #787778;
+    padding-top: 8px;
+    font-size: 24px;
+}
+.create-btn {
+    background-color: #9068be; 
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+}
