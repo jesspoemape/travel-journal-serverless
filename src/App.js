@@ -23,7 +23,7 @@ constructor() {
           <Header />
         </div>
         <div>
-          <PostCreator />
+          <PostCreator createPost={this.props.createPost}/>
         </div>
       </div>
     );

@@ -5,8 +5,9 @@ const initialState = {
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case CREATE_POST:
-        console.log('here');
-            break;
+            return Object.assign({}, state, {
+                posts: [action.payload, ...state.posts]
+            });
         default: return state;
     }
 }
@@ -15,9 +16,9 @@ export default function reducer(state = initialState, action) {
 const CREATE_POST = 'CREATE_POST';
 
 //action creators
-export function createPost(post) {
+export function createPost(fullPost) {
     return {
         type: CREATE_POST,
-        payload: post
+        payload: fullPost
     }
 }
