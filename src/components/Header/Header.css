@@ -1,5 +1,24 @@
+* {
+    font-size: 16px;
+}
 .header-container {
     height: 100px;
     width: 100%;
     background-color: #6ED3CF;
+    position: realtive;
+}
+
+.create-post-btn {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    background-color: #e62739;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.create-post-btn h1 {
+    color: white;
+    font-size: 3em;
 }
