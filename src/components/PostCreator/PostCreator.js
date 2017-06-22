@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {createPost} from './../../ducks/reducer';
 import './PostCreator.css';
 
 class PostCreator extends Component {
@@ -64,4 +66,4 @@ handleClick() {
 }
 
 
-export default PostCreator;
+export default connect(null, {createPost})(PostCreator);
