@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import './LandingPage.css';
 
@@ -9,7 +10,8 @@ class LandingPage extends Component {
             <div className='main-container'>
                 {
                     this.props.listOfPosts.map( (post, i) => {
-                        return <div className='landing-post-container' key={`post-${i}`}>
+                        return <Link className='link' to={`post-detail/{i}`} key={i}>
+                        <div className='landing-post-container' >
                             <div className='landing-post-title'>
                                 <h2>
                                     {post.title}
@@ -23,6 +25,7 @@ class LandingPage extends Component {
                             </div>
                             <hr className='hr'/>
                         </div>
+                        </Link>
                     } )
                 }
             </div>

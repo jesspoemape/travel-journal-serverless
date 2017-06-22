@@ -31,3 +31,6 @@ svg {
     width: 20px;
     height: auto;
 }
+.link {
+    text-decoration: none;
+}

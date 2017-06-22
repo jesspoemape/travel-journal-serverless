@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {createPost} from './../../ducks/reducer';
+import {Link} from 'react-router-dom';
 import './PostCreator.css';
 
 class PostCreator extends Component {
@@ -16,6 +17,10 @@ class PostCreator extends Component {
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
+componentWillMount() {
+    console.log("l");
+    this.setState({test: "test"});
+}
 
 handleTitleChange(e) {
     this.setState({
@@ -55,11 +60,11 @@ handleClick() {
                     placeholder='Today I...'
                     onChange={ (e) => this.handleBodyChange(e.target.value) }
                     value={this.state.bodyInput}/>
-                <button 
+                <Link to='/'><button 
                     className='create-btn' 
                     onClick={() => this.handleClick()}>
                 Add
-                </button>
+                </button></Link>
             </div>
         );
     }
