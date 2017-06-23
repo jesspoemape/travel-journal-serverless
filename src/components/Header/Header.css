@@ -6,6 +6,24 @@
     width: 100%;
     background-color: #6ED3CF;
     position: realtive;
+    display: flex;
+    align-items: center;
+}
+.logo-name-desktop {
+    font-family: 'Dosis';
+    font-weight: 700;
+    font-size: 3rem;
+    color: #787778;
+    margin-left: 30px;
+    display: none;
+}
+
+.logo-letter-mobile {
+    font-family: 'Dosis';
+    font-weight: 700;
+    font-size: 5rem;
+    color: #787778;
+    margin-left: 30px;
 }
 
 .create-post-btn {
@@ -13,6 +31,7 @@
     width: 100px;
     position: absolute;
     right: 0;
+    top: 0;
     background-color: #e62739;
     display: flex;
     justify-content: center;
