@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Header from './components/Header/Header';
 import router from './router';
@@ -6,7 +6,7 @@ import router from './router';
 import './App.css';
 import './reset.css';
 
-export function App( {children} ) {
+export function App( ) {
 
     return (
         <div id='app-main-container'>

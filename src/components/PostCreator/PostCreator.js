@@ -9,8 +9,7 @@ class PostCreator extends Component {
         super();
         this.state = {
             titleInput: '',
-            bodyInput: '',
-            fullPost: {title: '', body: ''}
+            bodyInput: ''
         }
 
         this.handleBodyChange = this.handleBodyChange.bind(this);
@@ -33,15 +32,14 @@ handleBodyChange(e) {
 handleClick() {
     var post = {title: this.state.titleInput, body: this.state.bodyInput};
     this.setState({
-        fullPost: post,
         bodyInput: '',
         titleInput: ''
     });
-    this.props.createPost(this.state.fullPost);
+    this.props.createPost(post);
 
-    return function componentDidMount() {
-    this.props.getWeather();
-    }
+    // return function componentDidMount() {
+    //     this.props.getWeather();
+    // }
 }
 
     render() {
