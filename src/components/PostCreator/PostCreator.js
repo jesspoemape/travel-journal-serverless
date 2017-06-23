@@ -15,12 +15,8 @@ class PostCreator extends Component {
         this.handleBodyChange = this.handleBodyChange.bind(this);
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
-        // this.componentDidMount = this.componentDidMount.bind(this);
     }
 
-// componentDidMount() {
-//     this.props.getWeather();
-// }
 
 handleTitleChange(e) {
     this.setState({
@@ -35,13 +31,19 @@ handleBodyChange(e) {
 }
 
 handleClick() {
-    var post = {title: this.state.titleInput, body: this.state.bodyInput};
-    this.setState({
-        bodyInput: '',
-        titleInput: ''
-    });
-    this.props.createPost(post);
+    if(this.state.bodyInput !== '' && this.state.titleInput !== ''){
+        var post = {title: this.state.titleInput, body: this.state.bodyInput};
+        this.setState({
+            bodyInput: '',
+            titleInput: ''
+        });
+        this.props.createPost(post);
 
+    function componentDidMount() {
+        this.props.getWeather();
+    }
+    return componentDidMount;
+    }
 }
 
     render() {
@@ -61,7 +63,13 @@ handleClick() {
                     onChange={ (e) => this.handleBodyChange(e.target.value) }
                     value={this.state.bodyInput}/>
                 <div className='button-container'>  
-                    <Link to='/post-detail/0'>
+                    <Link to={ 
+                        (this.state.bodyInput !== '' && this.state.titleInput !== '') 
+                        ? 
+                            '/post-detail/0'
+                        :
+                            '/create-post'
+                     }>
                         <button // this takes them to the detail page of the newest post, which is added to the front of the posts array
                         className='create-btn' 
                         onClick={() => this.handleClick()}>

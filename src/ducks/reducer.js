@@ -27,7 +27,6 @@ export default function reducer(state = initialState, action) {
             // });
             break;
         case GET_WEATHER + '_PENDING':
-            console.log('loading');
             break;
         case GET_WEATHER + '_REJECTED': 
             alert('There was an error. Try again.');
