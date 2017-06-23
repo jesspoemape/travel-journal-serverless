@@ -3,8 +3,91 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import './PostDetail.css';
+import './../../images/css/weather-icons.min.css';
 
 class PostDetail extends Component {
+
+
+calculateMoonPhaseIcon() {
+    var moon = this.props.moonPhase;
+
+    if (moon === 0) {
+        return <i className="wi wi-moon-new"></i>
+    }
+    else if (moon <= 0.04) {
+        return<i className="wi wi-moon-waxing-crescent-1"></i>
+    }
+    else if (moon <= 0.08) {
+        return <i className="wi wi-moon-waxing-crescent-2"></i>
+    }
+    else if (moon <= 0.12) {
+        return <i className="wi wi-moon-waxing-crescent-3"></i>
+    }
+    else if (moon <= 0.16) {
+        return <i className="wi wi-moon-waxing-crescent-5"></i>
+    }
+    else if (moon <= 0.2) {
+        return <i className="wi wi-moon-waxing-crescent-6"></i>
+    }
+    else if (moon === 0.25) {
+        return <i className="wi wi-moon-first-quarter"></i> // first quarter
+    }
+    else if (moon <= 0.29) {
+        return <i className="wi wi-moon-waxing-gibbous-1"></i>
+    }
+    else if (moon <= 0.33) {
+        return <i className="wi wi-moon-waxing-gibbous-2"></i>
+    }
+    else if (moon <= 0.37) {
+        return <i className="wi wi-moon-waxing-gibbous-3"></i>
+    }
+    else if (moon <= 0.41) {
+        return <i className="wi wi-moon-waxing-gibbous-5"></i>
+    }
+    else if (moon <= 0.45) {
+        return <i className="wi wi-moon-waxing-gibbous-6"></i>
+    }
+    else if (moon === 0.5) {
+        return<i className="wi wi-moon-full"></i> // full moon
+    }
+    else if (moon <= 0.54) {
+        return <i className="wi wi-moon-waning-gibbous-1"></i>
+    }
+    else if (moon <= 0.58) {
+        return <i className="wi wi-moon-waning-gibbous-2"></i>
+    }
+    else if (moon <= 0.62) {
+        return <i className="wi wi-moon-waning-gibbous-3"></i>
+    }
+    else if (moon <= 0.66) {
+        return <i className="wi wi-moon-waning-gibbous-5"></i>
+    }
+    else if (moon <= 0.7) {
+        return <i className="wi wi-moon-waning-gibbous-6"></i>
+    }
+    else if (moon === 0.75) {
+        return <i className="wi wi-moon-third-quarter"></i> // third quarter
+    }
+    else if (moon <= 0.79) {
+        return <i className="wi wi-moon-waning-crescent-1"></i>
+    }
+    else if (moon <= 0.83) {
+        return <i className="wi wi-moon-waning-crescent-2"></i>
+    }
+    else if (moon <= 0.87) {
+        return <i className="wi wi-moon-waning-crescent-3"></i>
+    }
+    else if (moon <= 0.91) {
+        return <i className="wi wi-moon-waning-crescent-5"></i>
+    }
+    else if (moon <= 0.95) {
+        return <i className="wi wi-moon-waning-crescent-6"></i>
+    }
+    else if (moon <= 0.99) {
+        return <i className="wi wi-moon-waning-crescent-1"></i>
+    }
+}
+
     render() {
         var postId = this.props.match.params.id;
 
@@ -12,7 +95,7 @@ class PostDetail extends Component {
         return (
             <div>
                 <div className='moon-container'>
-                    Moon
+                    {this.calculateMoonPhaseIcon()}
                 </div>
                 <div className='post-detail-title'>
                     <h1>{listOfPosts[postId].title}</h1>
@@ -40,7 +123,8 @@ class PostDetail extends Component {
 }
 function mapStateToProps(state, ownProps) {
     return {
-        listOfPosts: state.posts
+        listOfPosts: state.posts,
+        moonPhase: state.moonPhase
     };
     
 }

@@ -21,11 +21,9 @@ export default function reducer(state = initialState, action) {
                 posts: [action.payload, ...state.posts]
             });
         case GET_WEATHER + '_FULFILLED': 
-        console.log(action.payload);
-            // return Object.assign({}, state, {
-            //     moonPhase: action.payload
-            // });
-            break;
+            return Object.assign({}, state, {
+                moonPhase: action.payload
+            });
         case GET_WEATHER + '_PENDING':
             break;
         case GET_WEATHER + '_REJECTED': 
