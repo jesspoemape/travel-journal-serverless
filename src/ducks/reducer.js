@@ -21,7 +21,7 @@ export default function reducer(state = initialState, action) {
                 posts: [action.payload, ...state.posts]
             });
         case GET_WEATHER + '_FULFILLED': 
-        console.log('fulfilled');
+        console.log(action.payload);
             // return Object.assign({}, state, {
             //     moonPhase: action.payload
             // });
@@ -50,7 +50,7 @@ export function createPost(fullPost) {
 
 export function getWeather() {
     const url = 'https://api.darksky.net/forecast/5f6d7c13a2c3177b29f5fed29f917fd5/37.8267,-122.4233';
-    const promise = axios.get(url).then(response => response); //response.daily.data[0].moonPhase
+    const promise = axios.get(url).then(response => response.data.daily.data[0].moonPhase); 
 
     return {
         type: GET_WEATHER,

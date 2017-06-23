@@ -15,8 +15,10 @@ class PostCreator extends Component {
         this.handleBodyChange = this.handleBodyChange.bind(this);
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        // this.componentDidMount = this.componentDidMount.bind(this);
     }
 
+// componentDidMount() {this.props.getWeather()}
 
 handleTitleChange(e) {
     this.setState({
@@ -38,11 +40,6 @@ handleClick() {
             titleInput: ''
         });
         this.props.createPost(post);
-
-    function componentDidMount() {
-        this.props.getWeather();
-    }
-    return componentDidMount;
     }
 }
 
