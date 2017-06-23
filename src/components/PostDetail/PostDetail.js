@@ -4,7 +4,8 @@ class PostDetail extends Component {
     render() {
         return (
             <div>
-                hi
+                <h1>My Title</h1>
+                
             </div>
         );
     }

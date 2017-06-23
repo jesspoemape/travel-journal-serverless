@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {createPost} from './../../ducks/reducer';
+import {createPost, getWeather} from './../../ducks/reducer';
 import {Link} from 'react-router-dom';
 import './PostCreator.css';
 
@@ -17,10 +17,6 @@ class PostCreator extends Component {
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
-componentWillMount() {
-    console.log("l");
-    this.setState({test: "test"});
-}
 
 handleTitleChange(e) {
     this.setState({
@@ -42,6 +38,10 @@ handleClick() {
         titleInput: ''
     });
     this.props.createPost(this.state.fullPost);
+
+    return function componentDidMount() {
+    this.props.getWeather();
+    }
 }
 
     render() {
@@ -71,4 +71,4 @@ handleClick() {
 }
 
 
-export default connect(null, {createPost})(PostCreator);
+export default connect(null, {createPost, getWeather})(PostCreator);
