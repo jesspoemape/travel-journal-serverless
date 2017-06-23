@@ -12,7 +12,7 @@ class LandingPage extends Component {
             <div className='main-container'>
                 {
                     this.props.listOfPosts.map( (post, i) => {
-                        return <Link className='link' to={`post-detail/{i}`} key={i}>
+                        return <Link className='link' to={`/post-detail/${i}`} key={i}>
                         <div className='landing-post-container' >
                             <div className='landing-post-title'>
                                 <h2>

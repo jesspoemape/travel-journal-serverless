@@ -36,7 +36,7 @@ handleClick() {
         titleInput: ''
     });
     this.props.createPost(post);
-
+    
     // return function componentDidMount() {
     //     this.props.getWeather();
     // }

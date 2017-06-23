@@ -7,7 +7,7 @@ import PostDetail from './components/PostDetail/PostDetail';
 export default (
         <Switch>
             <Route exact path='/' component={LandingPage} />
-            <Route exact path='/create-post' component={PostCreator} />
-            <Route path='post-detail/:id' component={PostDetail} />
+            <Route path='/create-post' component={PostCreator} />
+            <Route path='/post-detail/:id' component={PostDetail} />
         </Switch>
 );
