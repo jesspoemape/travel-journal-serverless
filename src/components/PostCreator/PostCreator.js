@@ -72,12 +72,17 @@ handleClick() {
                      }>
                         <button // this takes them to the detail page of the newest post, which is added to the front of the posts array
                         className='create-btn' 
-                        onClick={() => this.handleClick()}>
+                        onClick={(this.state.bodyInput !== '' && this.state.titleInput !== '')
+                        ?
+                            () => this.handleClick()
+                        :
+                            null
+                    }>
                     Add
                         </button>
                     </Link>
                     <Link to='/'>
-                        <button // this takes them to the detail page of the newest post, which is added to the front of the posts array
+                        <button // this takes them to the landing page
                         className='create-btn'>
                     Cancel
                         </button>
