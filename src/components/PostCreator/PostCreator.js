@@ -18,7 +18,7 @@ class PostCreator extends Component {
         this.handleBodyChange = this.handleBodyChange.bind(this);
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
-        // this.componentDidMount = this.componentDidMount.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
     }
 
 // componentDidMount() {this.props.getWeather()}
@@ -26,13 +26,18 @@ class PostCreator extends Component {
 componentDidMount() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(location => { 
-            console.log(location.coords.latitude);
-            console.log(location.coords.longitude);
+            this.setState({
+                location: `${location.coords.latitude},${location.coords.longitude}`
+            });
         });
     } else {
         alert("Geolocation is not supported by this browser.");
-        }
     }
+    
+    // if (this.state.location) {
+    //     this.props.getWeather(this.state.location);
+    // }
+}
 
 
 
@@ -53,13 +58,19 @@ handleClick() {
     if(this.state.bodyInput !== '' && this.state.titleInput !== ''){
         var d = new Date().toDateString();
         var t = new Date().getHours() + ":" + new Date().getMinutes(); 
-        var post = {title: this.state.titleInput, body: this.state.bodyInput};
+        console.log(t, d);
+        var post = {
+            title: this.state.titleInput, 
+            body: this.state.bodyInput,
+            date: d,
+            time: t,
+            location: this.state.location 
+        };
         this.setState({
             bodyInput: '',
             titleInput: '',
-            date: d,
-            time: t
         });
+
         this.props.createPost(post);
     }
 }
