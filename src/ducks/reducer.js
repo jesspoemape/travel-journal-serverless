@@ -4,11 +4,19 @@ const initialState = {
     posts: [
         {
             title: "What a Day!", 
-            body: 'Omnis natus labore hic cumque animi voluptatibus. Nihil nulla cupiditate aut possimus modi deleniti sunt distinctio. Eaque ad odio distinctio est rerum. Praesentium praesentium a error unde et provident placeat consectetur facilis. Nobis magni nesciunt veritatis aut corrupti asperiores. Id aut at laudantium nobis.'
+            body: 'Omnis natus labore hic cumque animi voluptatibus. Nihil nulla cupiditate aut possimus modi deleniti sunt distinctio. Eaque ad odio distinctio est rerum. Praesentium praesentium a error unde et provident placeat consectetur facilis. Nobis magni nesciunt veritatis aut corrupti asperiores. Id aut at laudantium nobis.',
+            moonPhase: 0,
+            location: '',
+            date: '',
+            time: ''
         },
        {
             title: "Best Food", 
-            body: 'Omnis natus labore hic cumque animi voluptatibus. Nihil nulla cupiditate aut possimus modi deleniti sunt distinctio. Eaque ad odio distinctio est rerum. Praesentium praesentium a error unde et provident placeat consectetur facilis. Nobis magni nesciunt veritatis aut corrupti asperiores. Id aut at laudantium nobis.'
+            body: 'Omnis natus labore hic cumque animi voluptatibus. Nihil nulla cupiditate aut possimus modi deleniti sunt distinctio. Eaque ad odio distinctio est rerum. Praesentium praesentium a error unde et provident placeat consectetur facilis. Nobis magni nesciunt veritatis aut corrupti asperiores. Id aut at laudantium nobis.',
+            moonPhase: 0.45,
+            location: '',
+            date: '',
+            time: ''
         }
             ],
     moonPhase: 0
@@ -46,8 +54,8 @@ export function createPost(fullPost) {
     }
 }
 
-export function getWeather() {
-    const url = 'https://api.darksky.net/forecast/5f6d7c13a2c3177b29f5fed29f917fd5/37.8267,-122.4233';
+export function getWeather(location) {
+    const url = `https://api.darksky.net/forecast/5f6d7c13a2c3177b29f5fed29f917fd5/${location}`;
     const promise = axios.get(url).then(response => response.data.daily.data[0].moonPhase); 
 
     return {

@@ -9,7 +9,10 @@ class PostCreator extends Component {
         super();
         this.state = {
             titleInput: '',
-            bodyInput: ''
+            bodyInput: '',
+            time: null,
+            date: null,
+            location: null
         }
 
         this.handleBodyChange = this.handleBodyChange.bind(this);
@@ -19,6 +22,20 @@ class PostCreator extends Component {
     }
 
 // componentDidMount() {this.props.getWeather()}
+
+componentDidMount() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(location => { 
+            console.log(location.coords.latitude);
+            console.log(location.coords.longitude);
+        });
+    } else {
+        alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+
+
 
 handleTitleChange(e) {
     this.setState({
@@ -34,10 +51,14 @@ handleBodyChange(e) {
 
 handleClick() {
     if(this.state.bodyInput !== '' && this.state.titleInput !== ''){
+        var d = new Date().toDateString();
+        var t = new Date().getHours() + ":" + new Date().getMinutes(); 
         var post = {title: this.state.titleInput, body: this.state.bodyInput};
         this.setState({
             bodyInput: '',
-            titleInput: ''
+            titleInput: '',
+            date: d,
+            time: t
         });
         this.props.createPost(post);
     }
