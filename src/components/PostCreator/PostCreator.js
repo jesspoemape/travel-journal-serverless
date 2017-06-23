@@ -36,7 +36,7 @@ handleClick() {
         titleInput: ''
     });
     this.props.createPost(post);
-    
+
     // return function componentDidMount() {
     //     this.props.getWeather();
     // }
@@ -58,7 +58,7 @@ handleClick() {
                     placeholder='Today I...'
                     onChange={ (e) => this.handleBodyChange(e.target.value) }
                     value={this.state.bodyInput}/>
-                <Link to='/'><button 
+                <Link to='/post-detail/0'><button // this takes them to the detail page of the newest post, which is added to the front of the posts array
                     className='create-btn' 
                     onClick={() => this.handleClick()}>
                 Add
