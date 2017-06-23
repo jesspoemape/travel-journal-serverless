@@ -26,16 +26,18 @@
     justify-content: center;
 }
 
-.location-container {
+.location-container, .time-date-container {
     position: relative;
     display: flex;
     align-items: center;
 }
-svg {
+.detail-svg {
     position: absolute;
     left: 30px;
     color: #787778;
+    width: 24px;
 }
 .location-container h4, .time-date-container h4 {
     padding-left: 35px;
+    text-transform: uppercase;
 }

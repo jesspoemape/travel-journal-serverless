@@ -15,7 +15,12 @@ class PostCreator extends Component {
         this.handleBodyChange = this.handleBodyChange.bind(this);
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        // this.componentDidMount = this.componentDidMount.bind(this);
     }
+
+// componentDidMount() {
+//     this.props.getWeather();
+// }
 
 handleTitleChange(e) {
     this.setState({
@@ -37,9 +42,6 @@ handleClick() {
     });
     this.props.createPost(post);
 
-    // return function componentDidMount() {
-    //     this.props.getWeather();
-    // }
 }
 
     render() {
@@ -58,11 +60,21 @@ handleClick() {
                     placeholder='Today I...'
                     onChange={ (e) => this.handleBodyChange(e.target.value) }
                     value={this.state.bodyInput}/>
-                <Link to='/post-detail/0'><button // this takes them to the detail page of the newest post, which is added to the front of the posts array
-                    className='create-btn' 
-                    onClick={() => this.handleClick()}>
-                Add
-                </button></Link>
+                <div className='button-container'>  
+                    <Link to='/post-detail/0'>
+                        <button // this takes them to the detail page of the newest post, which is added to the front of the posts array
+                        className='create-btn' 
+                        onClick={() => this.handleClick()}>
+                    Add
+                        </button>
+                    </Link>
+                    <Link to='/'>
+                        <button // this takes them to the detail page of the newest post, which is added to the front of the posts array
+                        className='create-btn'>
+                    Cancel
+                        </button>
+                    </Link>
+                </div>
             </div>
         );
     }

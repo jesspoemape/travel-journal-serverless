@@ -20,14 +20,16 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {
                 posts: [action.payload, ...state.posts]
             });
-        case GET_WEATHER_FULFILLED: 
-            return Object.assign({}, state, {
-                moonPhase: action.payload
-            });
-        case GET_WEATHER_PENDING:
+        case GET_WEATHER + '_FULFILLED': 
+        console.log('fulfilled');
+            // return Object.assign({}, state, {
+            //     moonPhase: action.payload
+            // });
+            break;
+        case GET_WEATHER + '_PENDING':
             console.log('loading');
             break;
-        case GET_WEATHER_REJECTED: 
+        case GET_WEATHER + '_REJECTED': 
             alert('There was an error. Try again.');
             break;
         default: return state;
@@ -37,9 +39,6 @@ export default function reducer(state = initialState, action) {
 // action creator constants
 const CREATE_POST = 'CREATE_POST';
 const GET_WEATHER = 'GET_WEATHER';
-const GET_WEATHER_FULFILLED = 'GET_WEATHER_FULFILLED';
-const GET_WEATHER_PENDING = 'GET_WEATHER_PENDING';
-const GET_WEATHER_REJECTED = 'GET_WEATHER_REJECTED';
 
 
 //action creators
@@ -50,9 +49,9 @@ export function createPost(fullPost) {
     }
 }
 
-export function getWeather(location) {
-    const url = 'https://api.darksky.net/forecast/5f6d7c13a2c3177b29f5fed29f917fd5/42.3601,-71.0589';
-    const promise = axios.get(url).then(response => response.data.results);
+export function getWeather() {
+    const url = 'https://api.darksky.net/forecast/5f6d7c13a2c3177b29f5fed29f917fd5/37.8267,-122.4233';
+    const promise = axios.get(url).then(response => response); //response.daily.data[0].moonPhase
 
     return {
         type: GET_WEATHER,

@@ -27,7 +27,7 @@
     color: #7d50b2;
 }
 
-svg {
+.landing-svg {
     position: absolute;
     right: 30px;
     width: 20px;
