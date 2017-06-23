@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
 
-import './PostDetail.css';
+import './../../App.css';
 import './../../images/css/weather-icons.min.css';
 
 class PostDetail extends Component {  

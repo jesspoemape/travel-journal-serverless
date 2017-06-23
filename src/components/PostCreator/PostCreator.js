@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {createPost, getWeather} from './../../ducks/reducer';
 import {Link} from 'react-router-dom';
-import './PostCreator.css';
+import './../../App.css';
 
 class PostCreator extends Component {
     constructor() {
@@ -58,7 +58,6 @@ handleClick() {
     if(this.state.bodyInput !== '' && this.state.titleInput !== ''){
         var d = new Date().toDateString();
         var t = new Date().getHours() + ":" + new Date().getMinutes(); 
-        console.log(t, d);
         var post = {
             title: this.state.titleInput, 
             body: this.state.bodyInput,
@@ -78,7 +77,6 @@ handleClick() {
     render() {
         return (
             <div className='input-container'>
-                {/*<h2>Create a New Entry</h2>*/}
                 <input 
                     type="text" 
                     className='input-title' 
