@@ -41,6 +41,10 @@ body {
 .link {
     text-decoration: none;
 }
+.landing-title-date {
+    color: #787778;
+    font-size: 1rem;
+}
 
 /***************POST CREATOR STYLES***************/
 
@@ -155,7 +159,7 @@ body {
     display: flex;
     align-items: center;
 }
-.detail-svg {
+.detail-svg-location, .detail-svg-t-d {
     position: absolute;
     left: 30px;
     color: #787778;
@@ -179,4 +183,46 @@ MEDIA QUERIES
 @media(min-width: 750px) {
     .logo-letter-mobile {display: none}
     .logo-name-desktop {display: block}
+    .body-time-date-location-container {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+    }
+    .moon-title-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+    .main-detail-container {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+    .time-date-location-container {
+        border-left: solid 1px #787778;
+    }
+    .detail-time {
+        font-size: 3rem;
+    }
+    .detail-date {
+        font-size: 1.7em;
+    }
+    .time-date-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: left;
+        padding-left: 0;
+    }
+    .detail-svg-t-d {
+        display: none;
+    }
+    .detail-svg-location {
+        position: relative;
+    }
+    .location-container {
+        padding-left: 0;
+        font-size: 1.5rem;
+    }
+
 }

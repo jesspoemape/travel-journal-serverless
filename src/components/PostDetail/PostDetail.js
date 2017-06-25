@@ -6,14 +6,13 @@ import './../../images/css/weather-icons.min.css';
 
 class PostDetail extends Component {  
 
-getMoonIcon(){
-    var moon = this.props.moonPhase;
+getMoonIcon(moon){
         var moonIcon;
 
         if (moon === 0) {
             moonIcon = <i className="wi wi-moon-new"></i>
         }
-        else if (moon <= 0.04) {
+        else if (moon > 0 && moon <= 0.04) {
             moonIcon = <i className="wi wi-moon-waxing-crescent-1"></i>
         }
         else if (moon <= 0.08) {
@@ -92,39 +91,47 @@ getMoonIcon(){
         var postId = this.props.match.params.id;
 
         const {listOfPosts} = this.props;
+
         return (
-            <div>
-                <div className='moon-container'>
-                    {this.getMoonIcon()}
+            <div className='main-detail-container'>
+                <div className='moon-title-container'>
+                    <div className='moon-container'>
+                    {this.getMoonIcon(listOfPosts[postId].moonPhase)}
+                    </div>
+                    <div className='post-detail-title'>
+                        <h1>{listOfPosts[postId].title}</h1>
+                    </div>
                 </div>
-                <div className='post-detail-title'>
-                    <h1>{listOfPosts[postId].title}</h1>
+                <div className='body-time-date-location-container'>
+                    <div className='time-date-location-container'>
+                        <div className='time-date-container'>
+                            <span className='detail-svg-t-d'><svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style={{"enableBackground":"new 0 0 100 100"}} ><g>
+                                <path d="M84.3,60V34.4V11.6h-10V2.1H62.2v9.4H29V2.1H16.9v9.4h-10v22.8V89h48.4c3.8,5.3,10,8.8,17,8.8c11.5,0,20.8-9.3,20.8-20.8   C93.1,70,89.6,63.8,84.3,60z M72.3,93.9c-9.3,0-16.8-7.6-16.8-16.8S63,60.2,72.3,60.2c9.3,0,16.8,7.6,16.8,16.8   S81.6,93.9,72.3,93.9z M10.9,34.4h69.5v23.4c-2.5-1-5.2-1.6-8-1.6c-11.5,0-20.8,9.3-20.8,20.8c0,2.8,0.6,5.5,1.6,8H10.9V34.4z    M10.9,15.6h6V25H29v-9.4h33.3V25h12.1v-9.4h6v14.8H10.9V15.6z M25,6.1V21h-4.1V6.1H25z M70.3,6.1V21h-4.1V6.1H70.3z"/>
+                                <path d="M61.4,81h11.5c1.1,0,2-0.9,2-2V63.7c0-1.1-0.9-2-2-2s-2,0.9-2,2V77h-9.5c-1.1,0-2,0.9-2,2S60.3,81,61.4,81z"/></g>
+                            </svg></span>
+                            <div className='detail-time'><h4>{listOfPosts[postId].time}</h4></div>
+                            <div className='detail-date'><h4>{listOfPosts[postId].date}</h4></div>
+                        </div>
+                        <div className='location-container'>
+                            <span className='detail-svg-location'><svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style={{enableBackground:"new 0 0 100 100"}}><g>
+                                <path d="M50,26.5c-7.5,0-13.7,6.3-13.7,14s6.1,14,13.7,14s13.7-6.3,13.7-14S57.5,26.5,50,26.5z M50,51.5c-5.9,0-10.7-4.9-10.7-11   s4.8-11,10.7-11s10.7,4.9,10.7,11S55.9,51.5,50,51.5z"/>
+                                <path d="M50,11.5c-16,0-29.3,12.8-30.4,29.2c-0.3,4.2,0.3,8.3,1.8,12.4c1.4,3.9,3.8,7.6,6.9,11L48.9,88c0.3,0.3,0.7,0.5,1.1,0.5   s0.9-0.2,1.1-0.5l20.5-23.9c3.2-3.4,5.5-7.1,6.9-11c1.5-4.1,2.1-8.2,1.8-12.4C79.3,24.3,66,11.5,50,11.5z M75.8,52   c-1.3,3.6-3.4,6.9-6.4,10L50,84.7L30.5,62c-2.9-3.1-5-6.4-6.3-10c-1.3-3.7-1.9-7.4-1.6-11.1c0.9-13,11.4-26.4,27.4-26.4   s26.6,13.4,27.4,26.4C77.7,44.6,77.1,48.4,75.8,52z"/></g>
+                            </svg></span>
+                            <h4>{listOfPosts[postId].location}</h4>
+                        </div>
+                    </div>
+                    <div className='post-detail-body'>
+                        <p>{listOfPosts[postId].body}</p>
+                    </div>
                 </div>
-                <div className='time-date-container'>
-                    <span className='detail-svg'><svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style={{"enableBackground":"new 0 0 100 100"}} ><g>
-                        <path d="M84.3,60V34.4V11.6h-10V2.1H62.2v9.4H29V2.1H16.9v9.4h-10v22.8V89h48.4c3.8,5.3,10,8.8,17,8.8c11.5,0,20.8-9.3,20.8-20.8   C93.1,70,89.6,63.8,84.3,60z M72.3,93.9c-9.3,0-16.8-7.6-16.8-16.8S63,60.2,72.3,60.2c9.3,0,16.8,7.6,16.8,16.8   S81.6,93.9,72.3,93.9z M10.9,34.4h69.5v23.4c-2.5-1-5.2-1.6-8-1.6c-11.5,0-20.8,9.3-20.8,20.8c0,2.8,0.6,5.5,1.6,8H10.9V34.4z    M10.9,15.6h6V25H29v-9.4h33.3V25h12.1v-9.4h6v14.8H10.9V15.6z M25,6.1V21h-4.1V6.1H25z M70.3,6.1V21h-4.1V6.1H70.3z"/>
-                        <path d="M61.4,81h11.5c1.1,0,2-0.9,2-2V63.7c0-1.1-0.9-2-2-2s-2,0.9-2,2V77h-9.5c-1.1,0-2,0.9-2,2S60.3,81,61.4,81z"/></g>
-                    </svg></span>
-                    <h4>{listOfPosts[postId].time} {listOfPosts[postId].date}</h4>
-                </div>
-                <div className='location-container'>
-                    <span className='detail-svg'><svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style={{enableBackground:"new 0 0 100 100"}}><g>
-                        <path d="M50,26.5c-7.5,0-13.7,6.3-13.7,14s6.1,14,13.7,14s13.7-6.3,13.7-14S57.5,26.5,50,26.5z M50,51.5c-5.9,0-10.7-4.9-10.7-11   s4.8-11,10.7-11s10.7,4.9,10.7,11S55.9,51.5,50,51.5z"/>
-                        <path d="M50,11.5c-16,0-29.3,12.8-30.4,29.2c-0.3,4.2,0.3,8.3,1.8,12.4c1.4,3.9,3.8,7.6,6.9,11L48.9,88c0.3,0.3,0.7,0.5,1.1,0.5   s0.9-0.2,1.1-0.5l20.5-23.9c3.2-3.4,5.5-7.1,6.9-11c1.5-4.1,2.1-8.2,1.8-12.4C79.3,24.3,66,11.5,50,11.5z M75.8,52   c-1.3,3.6-3.4,6.9-6.4,10L50,84.7L30.5,62c-2.9-3.1-5-6.4-6.3-10c-1.3-3.7-1.9-7.4-1.6-11.1c0.9-13,11.4-26.4,27.4-26.4   s26.6,13.4,27.4,26.4C77.7,44.6,77.1,48.4,75.8,52z"/></g>
-                    </svg></span>
-                    <h4>{listOfPosts[postId].location}</h4>
-                </div>
-                <div className='post-detail-body'>
-                    <p>{listOfPosts[postId].body}</p>
-                </div>
+                
             </div>
         );
     }
 }
 function mapStateToProps(state, ownProps) {
     return {
-        listOfPosts: state.posts,
-        moonPhase: state.moonPhase
+        listOfPosts: state.posts
     };
     
 }

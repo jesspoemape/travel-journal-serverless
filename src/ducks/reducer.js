@@ -5,21 +5,20 @@ const initialState = {
         {
             title: "What a Day!", 
             body: 'Omnis natus labore hic cumque animi voluptatibus. Nihil nulla cupiditate aut possimus modi deleniti sunt distinctio. Eaque ad odio distinctio est rerum. Praesentium praesentium a error unde et provident placeat consectetur facilis. Nobis magni nesciunt veritatis aut corrupti asperiores. Id aut at laudantium nobis.',
-            moonPhase: 0,
-            location: '42.3601,-71.0589',
+            moonPhase: 0.75,
+            location: '42.36,-71.05',
             date: 'Thurs May 11 2016',
             time: '04:23'
         },
        {
             title: "Best Food", 
             body: 'Omnis natus labore hic cumque animi voluptatibus. Nihil nulla cupiditate aut possimus modi deleniti sunt distinctio. Eaque ad odio distinctio est rerum. Praesentium praesentium a error unde et provident placeat consectetur facilis. Nobis magni nesciunt veritatis aut corrupti asperiores. Id aut at laudantium nobis.',
-            moonPhase: 0.45,
-            location: '23.2381,-93.2938',
+            moonPhase: 0.04,
+            location: '23.23,-93.29',
             date: 'Mon Jun 26 2017',
             time: '15:02'
         }
-            ],
-    moonPhase: 0
+            ]
 }
 
 export default function reducer(state = initialState, action) {

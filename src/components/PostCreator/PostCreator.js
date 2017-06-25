@@ -27,7 +27,7 @@ componentDidMount() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(location => { 
             this.setState({
-                location: `${location.coords.latitude},${location.coords.longitude}`
+                location: `${location.coords.latitude.toFixed(2)},${location.coords.longitude.toFixed(2)}`
             });
         });
     } else {
