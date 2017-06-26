@@ -27,13 +27,13 @@ export default function reducer(state = initialState, action) {
         case CREATE_POST:
             var newPost = action.payload;
             newPost.moonPhase = state.tempMoonPhase;
+            console.log(newPost.moonPhase);
             return Object.assign({}, state, {
                 posts: [newPost, ...state.posts]
             });
         case GET_WEATHER + '_FULFILLED': 
-        console.log(action.payload);
             return Object.assign({}, state, {
-                moonPhase: action.payload
+                tempMoonPhase: action.payload
             });
         case GET_WEATHER + '_PENDING':
             break;
