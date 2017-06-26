@@ -31,12 +31,10 @@ export default function reducer(state = initialState, action) {
                 posts: [newPost, ...state.posts]
             });
         case GET_WEATHER + '_FULFILLED':
-        console.log("here"); 
             return Object.assign({}, state, {
                 tempMoonPhase: action.payload
             });
         case GET_WEATHER + '_PENDING':
-        console.log("loading");
             break;
         case GET_WEATHER + '_REJECTED': 
             alert('There was an error. Try again.');
