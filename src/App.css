@@ -6,6 +6,7 @@ body {
     font-size: 16px;
 }
 /***************SPLASH PAGE STYLES***************/
+
 .parallax-1, .parallax-2, .parallax-3, .parallax-4 {
     position: relative;
 
@@ -183,7 +184,7 @@ body {
 }
 .create-post-btn h1 {
     color: white;
-    font-size: 3em;
+    font-size: 3rem;
 }
 
 /**********POST DETAIL STYLES*************/
@@ -230,12 +231,14 @@ body {
 }
 
 .wi {
-    font-size: 5em;
+    font-size: 5rem;
     color: #787778;
 }
 
 /*******************************************
+
 MEDIA QUERIES
+
 ********************************************/
 
 /* once we reach larger than 750px, apply these new styles*/
