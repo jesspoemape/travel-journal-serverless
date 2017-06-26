@@ -19,7 +19,8 @@ const initialState = {
             time: '15:02'
         }
             ],
-    tempMoonPhase: 0
+    tempMoonPhase: 0,
+    tempLocation: 0
 }
 
 export default function reducer(state = initialState, action) {
@@ -27,25 +28,28 @@ export default function reducer(state = initialState, action) {
         case CREATE_POST:
             var newPost = action.payload;
             newPost.moonPhase = state.tempMoonPhase;
+            newPost.location = state.tempLocation;
             return Object.assign({}, state, {
                 posts: [newPost, ...state.posts]
             });
-        case GET_WEATHER + '_FULFILLED':
+        case GET_IP + '_FULFILLED':
             return Object.assign({}, state, {
                 tempMoonPhase: action.payload
             });
-        case GET_WEATHER + '_PENDING':
+        case GET_IP + '_PENDING':
             break;
-        case GET_WEATHER + '_REJECTED': 
-            alert('There was an error. Try again.');
-            break;
+        case GET_LOCATION + '_FULFILLED':
+            return Object.assign({}, state, {
+                tempLocation: action.payload
+            });
         default: return state;
     }
 }
 
 // action creator constants
 const CREATE_POST = 'CREATE_POST';
-const GET_WEATHER = 'GET_WEATHER';
+const GET_IP = 'GET_IP';
+const GET_LOCATION = 'GET_LOCATION';
 
 
 //action creators
@@ -56,12 +60,24 @@ export function createPost(fullPost) {
     }
 }
 
-export function getWeather(location) {
-    const url = `https://api.darksky.net/forecast/5f6d7c13a2c3177b29f5fed29f917fd5/${location}`;
-    const promise = axios.get(url).then(response => response.data.daily.data[0].moonPhase); 
+export function getIP() {
+    const url = 'https://ipinfo.io/geo';
+    const promise = axios.get(url).then(location => axios.get(`https://api.darksky.net/forecast/5f6d7c13a2c3177b29f5fed29f917fd5/${location.data.loc}`).then(response => response.data.daily.data[0].moonPhase));
 
     return {
-        type: GET_WEATHER,
+        type: GET_IP,
         payload: promise
     }
 }
+
+export function getLocation() {
+    const url = 'https://ipinfo.io/geo';
+    const promise = axios.get(url).then(response => response.data.loc);
+
+    return {
+        type: GET_LOCATION,
+        payload: promise
+    }
+}
+
+

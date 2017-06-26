@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {createPost, getWeather} from './../../ducks/reducer';
+import {createPost, getIP, getLocation} from './../../ducks/reducer';
 import {Link} from 'react-router-dom';
 import Header from './../Header/Header';
 import './../../App.css';
@@ -12,28 +12,22 @@ class PostCreator extends Component {
             titleInput: '',
             bodyInput: '',
             time: null,
-            date: null,
-            location: null
+            date: null
         }
 
         this.handleBodyChange = this.handleBodyChange.bind(this);
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.componentDidMount = this.componentDidMount.bind(this);
+        this.componentWillMount = this.componentWillMount.bind(this);
     }
 
+componentWillMount() {
+    this.props.getLocation();
+}
 
 componentDidMount() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(location => { 
-            this.setState({
-                location: `${location.coords.latitude.toFixed(2)},${location.coords.longitude.toFixed(2)}`
-            });
-            this.props.getWeather(`${location.coords.latitude},${location.coords.longitude}`);
-        });
-    } else {
-        alert("Geolocation is not supported by this browser.");
-    }
+  this.props.getIP();
 }
 
 handleTitleChange(e) {
@@ -56,8 +50,7 @@ handleClick() {
             title: this.state.titleInput, 
             body: this.state.bodyInput,
             date: d,
-            time: t,
-            location: this.state.location 
+            time: t
         };
         this.setState({
             bodyInput: '',
@@ -118,5 +111,10 @@ handleClick() {
     }
 }
 
+// function mapStateToProps(state) {
+//     return {
+//         location: state.tempLocation
+//     }
+// }
 
-export default connect(null, {createPost, getWeather})(PostCreator);
+export default connect(null, {createPost, getIP, getLocation})(PostCreator);
