@@ -66,6 +66,7 @@ body {
 }
 .parallax-4 {
     position: relative;
+
     /*image used*/
     background-image: url('./images/luca-baggio-112868.jpg');
 
@@ -82,12 +83,16 @@ body {
     font-family: 'Dosis', sans-serif;
     font-weight: 700;
     font-size: 5rem;
+    padding: 15px;
 }
 .cta-splash {
     height: 50px;
     width: 150px;
     margin: 15px;
     padding: 15px;
+    color: #696969;
+    background-color: #e7e7e7;
+    border: none;
 }
 
 /***************LANDING PAGE STYLES***************/
@@ -103,6 +108,7 @@ body {
     font-family: 'Dosis', sans-serif;
     text-transform: uppercase;
     font-weight: 300;
+    color: #787778;
 }
 .landing-post-body {
     margin-left: 15px;
@@ -309,7 +315,7 @@ MEDIA QUERIES
         padding-left: 0;
         font-size: 1.5rem;
     }
-    .parallax-1, .parallax-2 {
+    .parallax-1, .parallax-2, .parallax-3, .parallax-4 {
         background-attachment: fixed;
     }
 
