@@ -6,11 +6,8 @@ body {
     font-size: 16px;
 }
 /***************SPLASH PAGE STYLES***************/
-
-.parallax-1 {
+.parallax-1, .parallax-2, .parallax-3, .parallax-4 {
     position: relative;
-    /*image used*/
-    background-image: url('./images/linas-bam-223729.jpg');
 
     /*full height*/
     height: 500px;
@@ -21,6 +18,20 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.parallax-1 {
+    background-image: url('./images/linas-bam-223729.jpg');
+}
+.parallax-2 {
+    background-image: url('./images/ian-dooley-280928.jpg');
+}
+.parallax-3 {
+    background-image: url('./images/josh-nezon-11312.jpg');
+}
+.parallax-4 {
+    background-image: url('./images/luca-baggio-112868.jpg');
+}
+
 .quote-container {
     height: 250px;
     background-color: #7d50b2;
@@ -35,49 +46,6 @@ body {
 .quote-author {
     color: #c0c0c0;
     font-size: 1.2rem;
-}
-.parallax-2 {
-    position: relative;
-    /*image used*/
-    background-image: url('./images/ian-dooley-280928.jpg');
-
-    /*image height*/
-    height: 500px;
-
-    /*parallax scrolling effect*/
-    background-attachment: scroll;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.parallax-3 {
-    position: relative;
-    /*image used*/
-    background-image: url('./images/josh-nezon-11312.jpg');
-
-    /*image height*/
-    height: 500px;
-
-    /*parallax scrolling effect*/
-    background-attachment: scroll;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.parallax-4 {
-    position: relative;
-
-    /*image used*/
-    background-image: url('./images/luca-baggio-112868.jpg');
-
-    /*image height*/
-    height: 500px;
-
-    /*parallax scrolling effect*/
-    background-attachment: scroll;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 .splash-logo {
     font-family: 'Dosis', sans-serif;
