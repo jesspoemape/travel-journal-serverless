@@ -10,79 +10,79 @@ getMoonIcon(moon){
         var moonIcon;
 
         if (moon === 0) {
-            moonIcon = <i className="wi wi-moon-new"></i>
+            moonIcon = <i className="wi wi-moon-new"></i>;
         }
         else if (moon > 0 && moon <= 0.04) {
-            moonIcon = <i className="wi wi-moon-waxing-crescent-1"></i>
+            moonIcon = <i className="wi wi-moon-waxing-crescent-1"></i>;
         }
-        else if (moon <= 0.08) {
-            moonIcon = <i className="wi wi-moon-waxing-crescent-2"></i>
+        else if (moon > 0.04 && moon <= 0.08) {
+            moonIcon = <i className="wi wi-moon-waxing-crescent-2"></i>;
         }
-        else if (moon <= 0.12) {
-            moonIcon = <i className="wi wi-moon-waxing-crescent-3"></i>
+        else if (moon > 0.08 && moon <= 0.12) {
+            moonIcon = <i className="wi wi-moon-waxing-crescent-3"></i>;
         }
-        else if (moon <= 0.16) {
-            moonIcon = <i className="wi wi-moon-waxing-crescent-5"></i>
+        else if (moon > 0.12 && moon <= 0.16) {
+            moonIcon = <i className="wi wi-moon-waxing-crescent-5"></i>;
         }
-        else if (moon <= 0.2) {
-            moonIcon = <i className="wi wi-moon-waxing-crescent-6"></i>
+        else if (moon > 0.16 && moon <= 0.2) {
+            moonIcon = <i className="wi wi-moon-waxing-crescent-6"></i>;
         }
-        else if (moon === 0.25) {
-            moonIcon = <i className="wi wi-moon-first-quarter"></i> // first quarter
+        else if (moon > 0.2 && moon <= 0.25) {
+            moonIcon = <i className="wi wi-moon-first-quarter"></i>; // first quarter
         }
-        else if (moon <= 0.29) {
-            moonIcon = <i className="wi wi-moon-waxing-gibbous-1"></i>
+        else if (moon > 0.25 && moon <= 0.29) {
+            moonIcon = <i className="wi wi-moon-waxing-gibbous-1"></i>;
         }
-        else if (moon <= 0.33) {
-            moonIcon = <i className="wi wi-moon-waxing-gibbous-2"></i>
+        else if (moon > 0.29 && moon <= 0.33) {
+            moonIcon = <i className="wi wi-moon-waxing-gibbous-2"></i>;
         }
-        else if (moon <= 0.37) {
-            moonIcon = <i className="wi wi-moon-waxing-gibbous-3"></i>
+        else if (moon > 0.33 && moon <= 0.37) {
+            moonIcon = <i className="wi wi-moon-waxing-gibbous-3"></i>;
         }
-        else if (moon <= 0.41) {
-            moonIcon = <i className="wi wi-moon-waxing-gibbous-5"></i>
+        else if (moon > 0.37 && moon <= 0.41) {
+            moonIcon = <i className="wi wi-moon-waxing-gibbous-5"></i>;
         }
-        else if (moon <= 0.45) {
-            moonIcon = <i className="wi wi-moon-waxing-gibbous-6"></i>
+        else if (moon > 0.41 && moon <= 0.45) {
+            moonIcon = <i className="wi wi-moon-waxing-gibbous-6"></i>;
         }
-        else if (moon === 0.5) {
-            moonIcon = <i className="wi wi-moon-full"></i> // full moon
+        else if (moon > 0.45 && moon <= 0.5) {
+            moonIcon = <i className="wi wi-moon-full"></i>; // full moon
         }
-        else if (moon <= 0.54) {
-            moonIcon = <i className="wi wi-moon-waning-gibbous-1"></i>
+        else if (moon > 0.5 && moon <= 0.54) {
+            moonIcon = <i className="wi wi-moon-waning-gibbous-1"></i>;
         }
-        else if (moon <= 0.58) {
-            moonIcon = <i className="wi wi-moon-waning-gibbous-2"></i>
+        else if (moon > 0.54 && moon <= 0.58) {
+            moonIcon = <i className="wi wi-moon-waning-gibbous-2"></i>;
         }
-        else if (moon <= 0.62) {
-            moonIcon = <i className="wi wi-moon-waning-gibbous-3"></i>
+        else if (moon > 0.58 && moon <= 0.62) {
+            moonIcon = <i className="wi wi-moon-waning-gibbous-3"></i>;
         }
-        else if (moon <= 0.66) {
-            moonIcon = <i className="wi wi-moon-waning-gibbous-5"></i>
+        else if (moon > 0.62 && moon <= 0.66) {
+            moonIcon = <i className="wi wi-moon-waning-gibbous-5"></i>;
         }
-        else if (moon <= 0.7) {
-            moonIcon = <i className="wi wi-moon-waning-gibbous-6"></i>
+        else if (moon > 0.66 && moon <= 0.7) {
+            moonIcon = <i className="wi wi-moon-waning-gibbous-6"></i>;
         }
-        else if (moon === 0.75) {
-            moonIcon = <i className="wi wi-moon-third-quarter"></i> // third quarter
+        else if (moon > 0.7 && moon <= 0.75) {
+            moonIcon = <i className="wi wi-moon-third-quarter"></i>; // third quarter
         }
-        else if (moon <= 0.79) {
-            moonIcon = <i className="wi wi-moon-waning-crescent-1"></i>
+        else if (moon > 0.75 && moon <= 0.79) {
+            moonIcon = <i className="wi wi-moon-waning-crescent-1"></i>;
         }
-        else if (moon <= 0.83) {
-            moonIcon = <i className="wi wi-moon-waning-crescent-2"></i>
+        else if (moon > 0.79 && moon <= 0.83) {
+            moonIcon = <i className="wi wi-moon-waning-crescent-2"></i>;
         }
-        else if (moon <= 0.87) {
-            moonIcon = <i className="wi wi-moon-waning-crescent-3"></i>
+        else if (moon > 0.83 && moon <= 0.87) {
+            moonIcon = <i className="wi wi-moon-waning-crescent-3"></i>;
         }
-        else if (moon <= 0.91) {
-            moonIcon = <i className="wi wi-moon-waning-crescent-5"></i>
+        else if (moon > 0.87 && moon <= 0.91) {
+            moonIcon = <i className="wi wi-moon-waning-crescent-5"></i>;
         }
-        else if (moon <= 0.95) {
-            moonIcon = <i className="wi wi-moon-waning-crescent-6"></i>
+        else if (moon > 0.91 && moon <= 0.95) {
+            moonIcon = <i className="wi wi-moon-waning-crescent-6"></i>;
         }
-        else if (moon <= 0.99) {
-            moonIcon = <i className="wi wi-moon-waning-crescent-1"></i>
+        else if (moon > 0.95 && moon <= 0.99) {
+            moonIcon = <i className="wi wi-moon-waning-crescent-1"></i>;
         }
         return moonIcon;
 }

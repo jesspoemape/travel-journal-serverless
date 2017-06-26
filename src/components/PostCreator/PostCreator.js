@@ -21,7 +21,6 @@ class PostCreator extends Component {
         this.componentDidMount = this.componentDidMount.bind(this);
     }
 
-// componentDidMount() {this.props.getWeather()}
 
 componentDidMount() {
     if (navigator.geolocation) {
@@ -29,18 +28,12 @@ componentDidMount() {
             this.setState({
                 location: `${location.coords.latitude.toFixed(2)},${location.coords.longitude.toFixed(2)}`
             });
+            this.props.getWeather(`${location.coords.latitude},${location.coords.longitude}`);
         });
     } else {
         alert("Geolocation is not supported by this browser.");
     }
-    
-    // if (this.state.location) {
-    //     this.props.getWeather(this.state.location);
-    // }
 }
-
-
-
 
 handleTitleChange(e) {
     this.setState({

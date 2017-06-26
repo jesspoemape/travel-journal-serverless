@@ -18,16 +18,20 @@ const initialState = {
             date: 'Mon Jun 26 2017',
             time: '15:02'
         }
-            ]
+            ],
+    tempMoonPhase: 0
 }
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case CREATE_POST:
+            var newPost = action.payload;
+            newPost.moonPhase = state.tempMoonPhase;
             return Object.assign({}, state, {
-                posts: [action.payload, ...state.posts]
+                posts: [newPost, ...state.posts]
             });
         case GET_WEATHER + '_FULFILLED': 
+        console.log(action.payload);
             return Object.assign({}, state, {
                 moonPhase: action.payload
             });
