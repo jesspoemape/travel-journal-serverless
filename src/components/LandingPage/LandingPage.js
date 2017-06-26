@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import Header from './../Header/Header';
 
 import './../../App.css';
 
@@ -10,6 +11,7 @@ class LandingPage extends Component {
     render() {
         return (
             <div className='main-container'>
+                <Header />
                 {
                     this.props.listOfPosts.map( (post, i) => {
                         return <Link className='link' to={`/post-detail/${i}`} key={i}>

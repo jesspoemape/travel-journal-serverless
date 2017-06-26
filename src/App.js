@@ -10,7 +10,6 @@ export function App( ) {
 
     return (
         <div id='app-main-container'>
-          <Header />
           {router}
         </div>
     );

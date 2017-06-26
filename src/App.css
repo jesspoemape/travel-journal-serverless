@@ -5,6 +5,91 @@ body {
 * {
     font-size: 16px;
 }
+/***************SPLASH PAGE STYLES***************/
+
+.parallax-1 {
+    position: relative;
+    /*image used*/
+    background-image: url('./images/linas-bam-223729.jpg');
+
+    /*full height*/
+    height: 500px;
+
+    /*parallax scrolling effect*/
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.quote-container {
+    height: 250px;
+    background-color: #7d50b2;
+    font-size: 1.5rem;
+    color: #e7e7e7;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.quote-author {
+    color: #c0c0c0;
+    font-size: 1.2rem;
+}
+.parallax-2 {
+    position: relative;
+    /*image used*/
+    background-image: url('./images/ian-dooley-280928.jpg');
+
+    /*image height*/
+    height: 500px;
+
+    /*parallax scrolling effect*/
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax-3 {
+    position: relative;
+    /*image used*/
+    background-image: url('./images/josh-nezon-11312.jpg');
+
+    /*image height*/
+    height: 500px;
+
+    /*parallax scrolling effect*/
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax-4 {
+    position: relative;
+    /*image used*/
+    background-image: url('./images/luca-baggio-112868.jpg');
+
+    /*image height*/
+    height: 500px;
+
+    /*parallax scrolling effect*/
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.splash-logo {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 700;
+    font-size: 5rem;
+}
+.cta-splash {
+    height: 50px;
+    width: 150px;
+    margin: 15px;
+    padding: 15px;
+}
+
 /***************LANDING PAGE STYLES***************/
 
 .landing-post-container {
@@ -223,6 +308,9 @@ MEDIA QUERIES
     .location-container {
         padding-left: 0;
         font-size: 1.5rem;
+    }
+    .parallax-1, .parallax-2 {
+        background-attachment: fixed;
     }
 
 }

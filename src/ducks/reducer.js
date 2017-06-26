@@ -13,7 +13,7 @@ const initialState = {
        {
             title: "Best Food", 
             body: 'Omnis natus labore hic cumque animi voluptatibus. Nihil nulla cupiditate aut possimus modi deleniti sunt distinctio. Eaque ad odio distinctio est rerum. Praesentium praesentium a error unde et provident placeat consectetur facilis. Nobis magni nesciunt veritatis aut corrupti asperiores. Id aut at laudantium nobis.',
-            moonPhase: 0.04,
+            moonPhase: 0.35,
             location: '23.23,-93.29',
             date: 'Mon Jun 26 2017',
             time: '15:02'
@@ -27,7 +27,6 @@ export default function reducer(state = initialState, action) {
         case CREATE_POST:
             var newPost = action.payload;
             newPost.moonPhase = state.tempMoonPhase;
-            console.log(newPost.moonPhase);
             return Object.assign({}, state, {
                 posts: [newPost, ...state.posts]
             });

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {createPost, getWeather} from './../../ducks/reducer';
 import {Link} from 'react-router-dom';
+import Header from './../Header/Header';
 import './../../App.css';
 
 class PostCreator extends Component {
@@ -69,6 +70,8 @@ handleClick() {
 
     render() {
         return (
+            <div>
+                <Header />
             <div className='input-container'>
                 <input 
                     type="text" 
@@ -101,7 +104,7 @@ handleClick() {
                     Add
                         </button>
                     </Link>
-                    <Link to='/'>
+                    <Link to='/landing'>
                         <button // this takes them to the landing page
                         className='create-btn'>
                     Cancel
@@ -109,6 +112,8 @@ handleClick() {
                     </Link>
                 </div>
             </div>
+            </div>
+            
         );
     }
 }

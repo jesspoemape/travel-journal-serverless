@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import Header from './../Header/Header';
 
 import './../../App.css';
 import './../../images/css/weather-icons.min.css';
@@ -93,6 +94,8 @@ getMoonIcon(moon){
         const {listOfPosts} = this.props;
 
         return (
+            <div>
+                <Header />
             <div className='main-detail-container'>
                 <div className='moon-title-container'>
                     <div className='moon-container'>
@@ -126,6 +129,8 @@ getMoonIcon(moon){
                 </div>
                 
             </div>
+            </div>
+            
         );
     }
 }
