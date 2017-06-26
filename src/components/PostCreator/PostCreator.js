@@ -111,10 +111,5 @@ handleClick() {
     }
 }
 
-// function mapStateToProps(state) {
-//     return {
-//         location: state.tempLocation
-//     }
-// }
 
 export default connect(null, {createPost, getIP, getLocation})(PostCreator);
